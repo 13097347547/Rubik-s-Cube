@@ -1,14 +1,18 @@
 #include<stdio.h>
-void maigicshow(char str[][9]);
-void turn(char str[][9]);
+void maigicshow(char str[][9]);		//展示魔方函数声明 
+void turn(char str[][9]);		//转动魔方函数声明 
 int main()
 {	
-	char magiccube[][9]={{'y','y','y','y','y','y','y','y','y'},{'o','o','o','o','o','o','o','o','o'},{'b','b','b','b','b','b','b','b','b'},
-	{'r','r','r','r','r','r','r','r','r'},{'g','g','g','g','g','g','g','g','g'},{'w','w','w','w','w','w','w','w','w'}};
+	char magiccube[][9]={{'y','y','y','y','y','y','y','y','y'},	//魔方 
+			     {'o','o','o','o','o','o','o','o','o'},
+			     {'b','b','b','b','b','b','b','b','b'},
+			     {'r','r','r','r','r','r','r','r','r'},
+			     {'g','g','g','g','g','g','g','g','g'},
+			     {'w','w','w','w','w','w','w','w','w'}};
 	maigicshow(magiccube);
 	return 0;
 }
-void turn(char str[][9])
+void turn(char str[][9])		//转动魔方函数
 {
 	int i,j,q;
 	char a,b,c,d;
@@ -38,14 +42,14 @@ void turn(char str[][9])
         default:printf("error\n"); break;
 	}
 }
-void maigicshow(char str[][9])
+void maigicshow(char str[][9])		//展示魔方函数
 {
 	int i,j;
 	for(i=0;i<6;i++)
 	{
 		for(j=0;j<9;j++)
 		{
-			printf("%d%d ",i,j);
+			printf("%c ",str[i][j]);
 			if(j%3==2) 
 			printf("\n");
 		}
